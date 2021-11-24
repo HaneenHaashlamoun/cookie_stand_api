@@ -4,15 +4,15 @@ from rest_framework.generics import (
 )
 from .models import Thing
 from .permissions import IsOwnerOrReadOnly
-from .serializers import ThingSerializer
+from .serializers import CookieStandSerializer
 
 
-class ThingList(ListCreateAPIView):
+class CookieStandList(ListCreateAPIView):
     queryset = Thing.objects.all()
-    serializer_class = ThingSerializer
+    serializer_class = CookieStandSerializer
 
 
-class ThingDetail(RetrieveUpdateDestroyAPIView):
+class CookieStandDetail(RetrieveUpdateDestroyAPIView):
     permission_classes = (IsOwnerOrReadOnly,)
     queryset = Thing.objects.all()
-    serializer_class = ThingSerializer
+    serializer_class = CookieStandSerializer
